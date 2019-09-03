@@ -35,9 +35,9 @@
 			<div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
 
 				<ul class="d-flex flex-column nav-item">
-					<a class = "text-black" href="cadastro.php"><div class="d-flex justify-content-center"> <i id = "home" class="fa fa-home fa-3x" aria-hidden="true"></i></div>
+					<a class = "text-black" href="home.php"><div class="d-flex justify-content-center"> <i id = "home" class="fa fa-home fa-3x" aria-hidden="true"></i></div>
 					<div class="d-flex justify-content-center text-dark">
-						<b>home</b>
+						<b>Início</b>
 					</div></a>
 				</ul>
 

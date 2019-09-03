@@ -1,7 +1,7 @@
 <?php
-    include_once 'conexao.php';
+    include 'conexao.php';
     
-    $att = $_GET["cpf"];
+    $id = $_GET["id"];
 
 ?>
 <!DOCTYPE html>
@@ -47,16 +47,18 @@
 
                     <div class="modal-body">
                         <h5>Dados do Paciente:</h5>
-                        <form class = "form-group mt-2" action="atualiza.php" method="post">
+                        <form class = "form-group mt-2" action="atualizaCadastro.php" method="_GET">
 
                             <?php
-                                $sql = "SELECT * FROM pessoa WHERE cpf = '$att'";
+                                $sql = "SELECT * FROM pessoa WHERE id_pessoa = '$id'";
                                 $buscar = mysqli_query($con, $sql);
 
 
                                 while ($array = mysqli_fetch_array($buscar)){
 
 
+
+                                    $idPessoa =  $array['id_pessoa'];
                                     $cpf = $array['cpf'];
                                     $rg = $array['rg'];
                                     $nome = $array['nome'];
@@ -85,85 +87,85 @@
 
                             <div class="form-group">
                                 <label for="cpf">CPF:</label>
-                                <input type="text" class="form-control" id="cpf" placeholder="" name = "cpf" value = "<?php echo $cpf; ?>" disabled = "disabled">
-                                <input type="number" class="form-control" id="cpf" placeholder="" name = "id" value = "<?php echo $att; ?>" style = "display:none;">
+                                <input type="text" class="form-control" id="cpf" name = "cpf" value = "<?php echo $cpf?>">
+                                <input type="text" class="form-control" id="id"  name = "id" value = "<?php echo $id?>" style = "display:none;">
                             </div>
 
                             <div class="form-group">
                                 <label for="rg">RG:</label>
-                                <input type="text" class="form-control" id="rg" placeholder="" name = "rg" value = "<?php echo $rg; ?>">
+                                <input type="text" class="form-control" id="rg" name = "rg" value = "<?php echo $rg?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="nome">Nome:</label>
-                                <input type="text" class="form-control" id="nome" placeholder="" name = "nome" value = "<?php echo $nome; ?>">
+                                <input type="text" class="form-control" id="nome" name = "nome" value = "<?php echo $nome?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="orcamento">Orçamento:</label>
-                                <input type="text" class="form-control" id="orcamento" placeholder="" name = "orcamento" value = "<?php echo $orcamento; ?>">
+                                <input type="text" class="form-control" id="orcamento" name = "orcamento" value = "<?php echo $orcamento?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="telefone">Telefone:</label>
-                                <input type="text" class="form-control" id="telefone" placeholder="" name = "telefone" value = "<?php echo $telefone; ?>">
+                                <input type="text" class="form-control" id="telefone" name = "telefone" value = "<?php echo $telefone?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="celular">Celular:</label>
-                                <input type="text" class="form-control" id="celular" placeholder="" name = "celular" value = "<?php echo $celular; ?>">
+                                <input type="text" class="form-control" id="celular" name = "celular" value = "<?php echo $celular?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" class="form-control" id="email" placeholder="" name = "email" value = "<?php echo $email; ?>">
+                                <input type="email" class="form-control" id="email" name = "email" value = "<?php echo $email?>">
                             </div>                              
                                                         
 
                             <div class="form-group">
                                 <label for="cep">CEP:</label>
-                                <input type="text" class="form-control" id="cep" placeholder="" name = "cep" value = "<?php echo $cep; ?>">
+                                <input type="text" class="form-control" id="cep" name = "cep" value = "<?php echo $cep?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="endereco">Endereço:</label>
-                                <input type="endereco" class="form-control" id="endereco" placeholder="" name = "endereco" value = "<?php echo $endereco; ?>">
+                                <input type="endereco" class="form-control" id="endereco" name = "endereco" value = "<?php echo $endereco?>">
                             </div>  
 
                             <div class="form-group">
                                 <label for="complemento">Complemento:</label>
-                                <input type="text" class="form-control" id="complemento" placeholder="" name = "complemento" value = "<?php echo $complemento; ?>">
+                                <input type="text" class="form-control" id="complemento" name = "complemento" value = "<?php echo $complemento?>">
                             </div>
 
                             
                             <div class="form-group">
                                 <label for="bairro">Bairro:</label>
-                                <input type="text" class="form-control" id="bairro" placeholder="" name = "bairro" value = "<?php echo $bairro; ?>">
+                                <input type="text" class="form-control" id="bairro" name = "bairro" value = "<?php echo $bairro?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="nascimento">Data de Nascimento:</label>
-                                <input type="date" class="form-control" id="nascimento" placeholder="" name = "nascimento" value = "<?php echo $nascimento; ?>">
+                                <input type="date" class="form-control" id="nascimento" name = "nascimento" value = "<?php echo $nascimento?>">
                             </div>  
 
                             <div class="form-group">
                                 <label for="inicio_tratamento">Inicio do Tratamento:</label>
-                                <input type="date" class="form-control" id="inicio_tratamento" placeholder="" name = "inicio_tratamento" value = "<?php echo $inicio_tratamento; ?>">
+                                <input type="date" class="form-control" id="inicio_tratamento" name = "inicio_tratamento" value = "<?php echo $inicio_tratamento?>">
                             </div>  
 
                             <div class="form-group">
                                 <label for="cidade">Cidade:</label>
-                                <input type="text" class="form-control" id="cidade" placeholder="" name = "cidade" value = "<?php echo $cidade; ?>">
+                                <input type="text" class="form-control" id="cidade"name = "cidade" value = "<?php echo $cidade?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="uf">UF:</label>
-                                <input type="text" class="form-control" id="uf" placeholder="" name = "uf" value = "<?php echo $uf; ?>">
+                                <input type="text" class="form-control" id="uf" name = "uf" value = "<?php echo $uf?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="situacaoficha">Situação da Ficha:</label>
-                                <input type="text" class="form-control" id="situacaoficha" placeholder="" name = "situacaoficha" value = "<?php echo $situacaoficha; ?>">
+                                <input type="text" class="form-control" id="situacaoficha"name = "situacaoficha" value = "<?php echo $situacaoficha?>">
                             </div>
 
                             <div class = "mb-2">
@@ -172,43 +174,43 @@
 
                             <div class="form-group">
                                 <label for="data">Doenças de Base:</label>
-                                <input type="text" class="form-control" id="doencabase" placeholder="" name = "doencaBase" value = "<?php echo $doencabase; ?>">
+                                <input type="text" class="form-control" id="doencabase" name = "doencabase" value = "<?php echo $doencabase ?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="alergia">Alergias:</label>
-                                <input type="text" class="form-control" id="alergia" placeholder="" name = "alergia" value = "<?php echo $alergia; ?>">
+                                <input type="text" class="form-control" id="alergia" name = "alergia" value = "<?php echo $alergia?>">
                             </div>  
 
                             <div class="form-group">
                                 <label for="medicamentos">Medicamentos:</label>
-                                <input type="text" class="form-control" id="medicamentos" placeholder="" name = "medicamentos" value = "<?php echo $medicamentos; ?>">
+                                <input type="text" class="form-control" id="medicamentos" name = "medicamentos" value = "<?php echo $medicamentos?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="cirurgia">Cirurgias:</label>
-                                <input type="text" class="form-control" id="cirurgia" placeholder="" name = "cirurgia" value = "<?php echo $cirurgia; ?>">
+                                <input type="text" class="form-control" id="cirurgia" name = "cirurgia" value = "<?php echo $cirurgia?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="internacoes">Internacões:</label>
-                                <input type="text" class="form-control" id="internacoes" placeholder="" name = "internacoes" value = "<?php echo $internacoes; ?>">
+                                <input type="text" class="form-control" id="internacoes" name = "internacoes" value = "<?php echo $internacoes?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="pa">P.A:</label>
-                                <input type="text" class="form-control" id="pa" placeholder="" name = "pa" value = "<?php echo $pa; ?>">
+                                <input type="text" class="form-control" id="pa" name = "pa" value = "<?php echo $pa?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="queixaprinc">Queixas Principais:</label>
-                                <input type="text" class="form-control" id="queixaprinc" placeholder="" name = "queixaPrinc" value = "<?php echo $queixaprinc; ?>">
+                                <input type="text" class="form-control" id="queixaprinc" name = "queixaprinc" value = "<?php echo $queixaprinc?>">
                             </div>                      
 
 
-                            <input type="submit" class="btn btn-primary float-right" value = "Cadastrar">
+                            <input type="submit" class="btn btn-primary float-right" value = "Atualizar">
 
-                        <?php }?>
+                        <?php };?>
                         </form>
                     </div>
                     <div class="modal-footer">

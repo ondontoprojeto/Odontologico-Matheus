@@ -13,7 +13,7 @@
 		<?php include 'header.php'?>
 		
 		
-		<button type="button" class="btn btn-primary btn-md ml-3" data-toggle="modal" data-target="#modal1">Cadastro de Produtos</button>
+		<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#modal1">Cadastrar Produto</button>
         <input type="button" class ="btn btn-dark ml-5" onclick="window.print();" value="imprimir">
         <!--Modal-->
 			<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
@@ -27,34 +27,34 @@
 						</div>
 			      		<div class="modal-body">
 			        		<h5 class="front-left">Descrição do Material</h5>
-							<form class = "form-group mt-2" action="agendarCliente.php" method="post">
+							<form class = "form-group mt-2" action="cadastrarEstoque.php" method="post">
 								<div class="form-group">
-									<label for="cpf">N° do Produto:</label>
-									<input type="text" class="form-control" id="cpf" placeholder="" name = "nroproduto">
+									<label for="nroProduto">N° do Produto:</label>
+									<input type="number" class="form-control" id="nroProduto" placeholder="" name = "nroproduto">
 								</div>
 								<div class="form-group">
 									<label for="nome">Nome do Produto:</label>
 									<input type="text" class="form-control" id="nome" placeholder="" name = "nomeproduto">
 								</div>
 								<div class="form-group">
-									<label for="nome">Categoria:</label>
-									<input type="text" class="form-control" id="nome" placeholder="" name = "categoria">
+									<label for="categoria">Categoria:</label>
+									<input type="text" class="form-control" id="categoria" placeholder="" name = "categoria">
 								</div>
 							<div class="form-group">
-									<label for="nome">Quantidade:</label>
-									<input type="text" class="form-control" id="nome" placeholder="" name = "quantidade">
+									<label for="quanti">Quantidade:</label>
+									<input type="text" class="form-control" id="quanti" placeholder="" name = "quantidade">
 								</div>
                                 <div class="form-group">
-									<label for="nome">Fornecedor:</label>
-									<input type="text" class="form-control" id="nome" placeholder="" name = "fornecedor">
+									<label for="fornecedor">Fornecedor:</label>
+									<input type="text" class="form-control" id="fornecedor" placeholder="" name = "fornecedor">
 								</div>
                                 <div class="form-group">
-									<label for="nome">Vencimento:</label>
-									<input type="text" class="form-control" id="nome" placeholder="" name = "vencimento">
+									<label for="venci">Vencimento:</label>
+									<input type="date" class="form-control" id="venci" placeholder="" name = "vencimento">
 								</div>
                                 <div class="form-group">
-									<label for="nome">Complemento:</label>
-									<input type="text" class="form-control" id="nome" placeholder="" name = "complemento">
+									<label for="obser">Observações:</label>
+									<input type="text" class="form-control" id="obser" placeholder="" name = "complemento">
 								</div>
 								<input type="submit" class="btn btn-primary float-right" value = "Cadastrar">
 							</form>
@@ -64,30 +64,7 @@
 					</div>
 				</div>
 			</div>
-			
-	<div class="container-fluid">
-		<div class= "row">
-
-		<div class = "col-4 mt-4">
-			<ul class="list-group">
-				<li class="list-group-item display-4"><b>Material</b></li>
-				<li class="list-group-item">Gaze</li>
-				<li class="list-group-item">Touca</li>
-				<li class="list-group-item">Mascara</li>
-				<li class="list-group-item">Algodão</li> 
-				<li class="list-group-item">Álcool 70</li> 
-				<li class="list-group-item">Água Destilada</li>
-				<li class="list-group-item">Pró-PE</li>
-				<li class="list-group-item">Babador</li>
-				<li class="list-group-item">Agulha</li>
-				<li class="list-group-item">Fio de Sultura</li>
-				<li class="list-group-item">Luva P</li>
-				<li class="list-group-item">Luva M</li>
-				<li class="list-group-item">Luva G</li>
-			</ul>
-		</div>
-
-			<table class="table w-100 col-8 mt-4">
+			<table class="table w-100 mt-4">
 				<thead class="thead-dark">
 					<tr>
 						<th scope="col">Código</th>
@@ -96,12 +73,13 @@
 						<th scope="col">Quantidade</th>
 						<th scope="col">Fornecedor</th>
 						<th scope ="col">Vencimento</th>
-						<th scope = "col">Complemento</th>
+						<th scope = "col">Observações</th>
 						<th scope = "col"></th>
 					</tr>
 				</thead>
 				<tbody>
-						<?php
+					<?php
+
 						include_once 'conexao.php';
 
 						$sql = "SELECT * FROM estoque";
@@ -109,8 +87,10 @@
 						$busca = mysqli_query($con, $sql);
 
 						while($array = mysqli_fetch_array($busca)){
-						
-							$codigo = $array['numeroproduto'];
+
+
+							$idEstoque = $array['id_estoque'];
+							$nroProduto = $array['numeroproduto'];
                             $nomeProduto = $array['nomeproduto'];
 							$categoria = $array['categoria'];
                             $quantidade = $array['quantidade'];
@@ -120,22 +100,26 @@
                                                        
 
                             //Ajuste da formatação da data DD/MM/AAAA
-							// $dtNasci = explode('-', $nascimento);
-							// $datadeNascimento = $dtNasci[2] . "-" . $dtNasci[1]. "-" . $dtNasci[0];
+							$dtVenci = explode('-', $vencimento);
+							$dtVencimento = $dtVenci[2] . "-" . $dtVenci[1]. "-" . $dtVenci[0];
 
 
 					?>
 						<tr>
-						    <td><?php echo $codigo?></td>
+						    <td><?php echo $nroProduto?></td>
 						    <td><?php echo $nomeProduto?></td>
 							<td><?php echo $categoria?></td>
 							<td><?php echo $quantidade?></td>
 							<td><?php echo $fornecedor?></td>
-							<td><?php echo $vencimento?></td>
+							<td><?php echo $dtVencimento?></td>
 							<td><?php echo $complemento?></td>
 
 
-							<td><a class="btn btn-dark btn-sm"  style="color:#fff" href="editarCadastro.php?cpf=<?php echo $cpf ?>" role="button"><i class="far fa-edit"></i></a></td>
+							<td>
+								<a class="btn btn-warning btn-sm"  style="color:#fff" href="editarEstoque.php?id=<?php echo $idEstoque?>" role="button"><i class="far fa-edit"></i></a>
+
+								<a class="btn btn-danger btn-sm"  style="color:#fff" href="deletarEstoque.php?id=<?php echo $idEstoque?>"  role="button"><i class="far fa-edit"></i></a>
+							</td>
         				</tr>
 					<?php } ?>
 				</tbody>
