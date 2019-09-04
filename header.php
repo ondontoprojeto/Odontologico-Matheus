@@ -20,8 +20,25 @@
 
 			<div class="d-inline-flex bd-highlight mt-3 mr-2">
 				<div>
-					<p>XXXXXXXXXXXXXX,</p>
-					<p>Developer</p>
+					<h5>Seja Bem-vindo (a),</h5>
+					<?php
+
+						$id = $_GET['id'];
+
+						include_once 'conexao.php';
+
+						$sql = "SELECT * FROM login WHERE `id_user` =  $id";
+
+						$buscar = mysqli_query($con, $sql);
+
+						while($array = mysqli_fetch_array($buscar)){
+
+							$nome = $array['nome'];		
+
+					?>
+					<h5><?php echo $nome?>.</h5>
+
+						<?php };?>
 					<a href="login.php"><button type="button" class="btn btn-dark float-right">Sair</button></a>
 				</div>
 			</div>

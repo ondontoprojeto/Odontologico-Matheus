@@ -12,7 +12,7 @@
 	$complemento =  $_POST['complemento'];
 
 
-    $sql = "INSERT INTO estoque VALUES(null,'{$numeroProduto}','{$nomeProduto}','{$categoria}','{$quantidade}' , '{$fornecedor}', '{$vencimento}', '{$complemento}')"; 
+   echo $sql = "INSERT INTO estoque VALUES(null,{$numeroProduto},'{$nomeProduto}','{$categoria}','{$quantidade}' , '{$fornecedor}', '{$vencimento}', '{$complemento}')"; 
 
 	// $inserir = mysqli_query($con, $sql);
 

@@ -27,7 +27,7 @@
 	                include_once 'conexao.php';
 	                
 	                $sql = "SELECT * FROM pessoa WHERE nome
-	                LIKE '{$nome}%'";
+	                LIKE '$nome%'";
 	                
 	                $result = mysqli_query($con, $sql); 
 	            }           
@@ -41,7 +41,7 @@
 				<div class="modal-dialog modal-dialog-centered" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h3 class="modal-title text-primary ml-5" id="modalTitle">Formulário de Cadastro</h3>
+							<h3 class="modal-title text-primary ml-5" id="modalTitle">Formulário de Cadastramento</h3>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
@@ -184,7 +184,7 @@
 	
 		<div class = "overflow-auto ml-1 mr-1" style = "max-height: 450px">
 			<table class="table border table-striped">
-				<thead id = "theadCadastro" class = "bg-light">
+				<thead id = "theadCadastro" class = "thead-dark">
 					<tr>
 						<th scope="col">CPF</th>
 						<th scope="col">RG</th>						
@@ -259,7 +259,38 @@
 
 							<td>
 								<a class="btn btn-warning btn-sm"  style="color:#fff" href="editarCadastro.php?id=<?php echo $idPessoa ?>" role="button"><i class="far fa-edit"></i></a> 
-								<a class="btn btn-danger btn-sm"  style="color:#fff" href="deletarCadastro.php?id=<?php echo $idPessoa ?>" role="button"><i class="far fa-trash-alt"></i></a>
+								<a class="btn btn-danger btn-sm"  style="color:#fff" href="deletarCadastro.php?id=<?php echo $idPessoa ?>" role="button"> <script>
+									function AcaoLimpar() {
+
+						            alert(1);
+						            var msgExcluir = $("#msgExcluir");
+						            msgExcluir.dialog({
+						                modal: true,
+						                buttons: {
+						                    "Sim": function () {
+						                        	//alert("Excluido com Sucesso");
+						                        	$("#txt_dt_ref_inicial").val("");
+						                        	$("#txt_dt_ref_final").val("");
+						                        	$("#ddl_tipotabela").val("");
+						                        	$("#txt_tabela").val("");
+						                        	$("#txt_classificacao").val("");
+						                        	$("#txt_grupo").val("");
+						                        	$("#ddl_autorizacaoprevia").val("");
+
+						                        	limparAutoComplete();
+
+						                        	$(this).dialog('close');
+						                    	},
+						                    	"Não": function () {
+						                       	 return false;
+						                        	$(this).dialog('close');
+						                    	}
+						                	}
+						            	});
+									}
+
+
+								</script><i class="far fa-trash-alt"></i></a>
 							</td>
          </tr>
 							

@@ -178,7 +178,7 @@
 					<input class = "text-center" type = "text" placeholder = "N Pacientes" disabled>
 				</span>
 				<span>
-					<input class = "btn btn-primary float-right" type = "submit" value = "Visualizar Agenda">
+					<a href= "#"><input class = "btn btn-primary float-right" type = "submit" value = "Visualizar Agenda"></a>
 				</span>
 			</div>
 			<div class = "col"></div>

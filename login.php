@@ -15,21 +15,21 @@
 	</header>
 	<!-- Área de login do Sistema (LOGIN) -->
 		<div id = "areaDeLogin">
-			<form>
+			<form action = "ope.php" method = "post">
 				<legend><b>BEM-VINDO</b></legend>
 
 
 				<label id = "labelUsuario" for="usuario">Usuário:</label>
 				<div id = "divUsuario" class = "form-group input-group w-75">
 						<span class = "input-group-text" id ="addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
-						<input type="text" class="form-control" id="usuario" placeholder="Digite seu nome de usuário:" aria-describedby = "addon1">
+						<input type="text" class="form-control" name = "login" id="usuario" placeholder="Digite seu nome de usuário:" aria-describedby = "addon1">
 				</div>
 
 
 				<label id = "labelSenha" for="senha">Senha:</label>
 				<div id = "divSenha" class="form-group input-group  w-75">
 					<span class = "input-group-text" id ="addon2"><i class="fa fa-lock" aria-hidden="true"></i></span>
-						<input type="password" class="form-control" id="senha" placeholder="Digite sua senha:" aria-describedby = "addon2">
+						<input type="password" class="form-control" name = "senha" id="senha" placeholder="Digite sua senha:" aria-describedby = "addon2">
 	
 				</div>
 

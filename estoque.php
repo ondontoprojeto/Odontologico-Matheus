@@ -14,7 +14,7 @@
 		
 		
 		<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#modal1">Cadastrar Produto</button>
-        <input type="button" class ="btn btn-dark ml-5" onclick="window.print();" value="imprimir">
+        <input type="button" class ="btn btn-dark ml-5" onclick="window.print();" value="Imprimir">
         <!--Modal-->
 			<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered" role="document">
@@ -113,8 +113,6 @@
 							<td><?php echo $fornecedor?></td>
 							<td><?php echo $dtVencimento?></td>
 							<td><?php echo $complemento?></td>
-
-
 							<td>
 								<a class="btn btn-warning btn-sm"  style="color:#fff" href="editarEstoque.php?id=<?php echo $idEstoque?>" role="button"><i class="far fa-edit"></i></a>
 
