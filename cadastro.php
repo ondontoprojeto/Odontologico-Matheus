@@ -43,6 +43,8 @@
                         $totalRegistros = mysqli_num_rows ($result);
                         
                         
+                        
+                        
                     }           
                 ?>
                 <button type="button" class="btn btn-primary btn-md ml-2" data-toggle="modal" data-target="#modal1">Cadastrar Paciente</button>
@@ -150,7 +152,7 @@
 
                                     <div class="form-group">
                                         <label for="data">Doenças de Base:</label>
-                                        <input type="text" class="form-control" id="doencabase" placeholder="" name = "doencaBase">
+                                        <input type="text" class="form-control" id="doencabase" placeholder="" name = "doencabase">
                                     </div>
 
                                     <div class="form-group">
@@ -180,7 +182,7 @@
 
                                     <div class="form-group">
                                         <label for="queixaprinc">Queixas Principais:</label>
-                                        <input type="text" class="form-control" id="queixaprinc" placeholder="" name = "queixaPrinc">
+                                        <input type="text" class="form-control" id="queixaprinc" placeholder="" name = "queixaprinc">
                                     </div>						
 
 

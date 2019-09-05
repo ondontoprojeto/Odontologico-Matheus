@@ -57,31 +57,30 @@
                                 while ($array = mysqli_fetch_array($buscar)){
 
 
-
-                                    $idPessoa =  $array['id_pessoa'];
-                                    $cpf = $array['cpf'];
-                                    $rg = $array['rg'];
-                                    $nome = $array['nome'];
-                                    $orcamento = $array['orcamento'];
-                                    $telefone = $array['telefone'];
-                                    $celular = $array['celular'];
-                                    $email = $array['email'];
-                                    $cep = $array['cep'];
-                                    $endereco = $array['endereco'];
-                                    $complemento = $array['complemento'];
-                                    $bairro = $array['bairro'];
-                                    $nascimento = $array['nascimento'];
-                                    $inicio_tratamento = $array['inicio_tratamento'];
-                                    $cidade = $array['cidade'];
-                                    $uf= $array['uf'];
-                                    $situacaoficha = $array['situacaoficha'];
-                                    $doencabase = $array['doencabase'];
-                                    $alergia = $array['alergia'];
-                                    $medicamentos = $array['medicamentos'];
-                                    $cirurgia = $array['cirurgia'];
-                                    $internacoes = $array['internacoes'];
-                                    $pa = $array['pa'];
-                                    $queixaprinc = $array['queixaprinc'];
+                                $idPessoa = $array['id_pessoa'];
+                                $cpf = $array['cpf'];
+                                $rg = $array['rg'];
+                                $nome = $array['nome'];
+                                $orcamento = $array['orcamento'];
+                                $telefone = $array['telefone'];
+                                $celular = $array['celular'];
+                                $email = $array['email'];
+                                $cep = $array['cep'];
+                                $endereco = $array['endereco'];
+                                $complemento = $array['complemento'];
+                                $bairro = $array['bairro'];
+                                $nascimento = $array['nascimento'];
+                                $inicio_tratamento = $array['inicio_tratamento'];
+                                $cidade = $array['cidade'];
+                                $uf= $array['uf'];
+                                $situacaoficha = $array['situacaoficha'];
+                                $doencabase = $array['doencabase'];
+                                $alergia = $array['alergia'];
+                                $medicamentos = $array['medicamentos'];
+                                $cirurgia = $array['cirurgia'];
+                                $internacoes = $array['internacoes'];
+                                $pa = $array['pa'];
+                                $queixaprinc = $array['queixaprinc'];    
                             ?>
 
 
