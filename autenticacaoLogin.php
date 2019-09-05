@@ -18,20 +18,14 @@
 		$senha = $array['senha'];
 		$perfil = $array['perfil'];
 
-
-		if($login == ""){
-			header('location:login.php');
-		} else {
-
-			if(mysqli_num_rows ($result) > 0 ){
-				$_SESSION['login'] = $login;
-				$_SESSION['senha'] = $senha;
-				header('location:home.php?id='.$idUser);
-			} else {
-				unset ($_SESSION['login']);
-				unset ($_SESSION['senha']);
-				header('location:login.php');
-			  };
-		};
-	};
+        if(mysqli_num_rows ($result) > 0 ){
+            $_SESSION['login'] = $login;
+            $_SESSION['senha'] = $senha;
+            header('location:home.php');
+        } else {
+            unset ($_SESSION['login']);
+            unset ($_SESSION['senha']);
+            header('location:login.php');
+          };
+    };
 ?>

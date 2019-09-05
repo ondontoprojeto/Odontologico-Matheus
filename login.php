@@ -15,7 +15,7 @@
 	</header>
 	<!-- Área de login do Sistema (LOGIN) -->
 		<div id = "areaDeLogin">
-			<form action = "ope.php" method = "post">
+			<form action = "autenticacaoLogin.php" method = "post">
 				<legend><b>BEM-VINDO</b></legend>
 
 
