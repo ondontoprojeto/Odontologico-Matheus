@@ -5,27 +5,18 @@
 
 	include_once 'conexao.php';
 
-	$select = mysqli_select_db($con, "odontologico") or die("Sem acesso ao DB, Entre em contato com o Administrador.");
-
-	$sql = "SELECT * FROM login WHERE `login` = '$login' AND `senha`= '$senha'";
+	$sql = "SELECT * FROM login WHERE `login` = '".$login."' AND `senha`= '".$senha."'";
 
 	$result = mysqli_query($con, $sql);
 
-	while($array = mysqli_fetch_array($result)){
+	if(mysqli_num_rows($result) == 1){
+		$row = mysqli_fetch_array($result);
+		$_SESSION["login"] = $row['login'];
+		$_SESSION['senha'] = $row['senha'];
+		header("location:home.php");
+	} else {
+		$msg = "Login ou Senha Inválidas!";
+		header("location:login.php?erro=".$msg);
+	}
 
-		$idUser = $array['id_user'];
-		$nome = $array['nome'];
-		$senha = $array['senha'];
-		$perfil = $array['perfil'];
-
-        if(mysqli_num_rows ($result) > 0 ){
-            $_SESSION['login'] = $login;
-            $_SESSION['senha'] = $senha;
-            header('location:home.php');
-        } else {
-            unset ($_SESSION['login']);
-            unset ($_SESSION['senha']);
-            header('location:login.php');
-          };
-    };
 ?>

@@ -11,7 +11,6 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="styleHome.css">
         <link rel="stylesheet" type="text/css" href="styleHeader.css">
 
         <style type="text/css">
@@ -31,6 +30,9 @@
         <div class = "container">
             <div class = "row justify-content-center">
                 <button id = "buttonEdicao" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal1">Editar Dados do Produto</button>
+            </div>
+            <div class = "text-center">
+                <a href="estoque.php" style = "font-size:20px;">Voltar</a>
             </div>
         </div>
 

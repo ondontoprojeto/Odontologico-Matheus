@@ -9,7 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="styleHeader.css">
         <script>
             function excluir(id){
-                if(confirm('Deseja realmente excluir este produto?')){
+                if(confirm('Deseja realmente excluir este Paciente?')){
                     location.href = 'deletarCadastro.php?id=' + id;   
                 }
             }
@@ -22,7 +22,7 @@
 
 			<!--Botão que ativa o Modal-->
 			
-        <div class = "container">
+        <div class = "pl-5 pr-5">
             <span class = "d-flex d-inline-flex mb-2">
                 <form class="form-inline">
                     <input class="form-control mr-2 ml-1" type="search" name = "nome">
@@ -195,9 +195,6 @@
                     </div>
                 </div>
             </span>
-        </div>
-            
-            <div class = "container">
             <div class = "overflow-auto ml-1 mr-1" style = "max-height: 450px">
                 <table class="table border table-striped">
                     <thead id = "theadCadastro" class = "thead-dark">
@@ -210,7 +207,6 @@
                             <th scope="col">Celular</th>	
                             <th scope="col">Ficha</th>	
                             <th scope="col">Data de Nasci.</th>
-                            <th scope="col">InicioTratamento</th>
                             <th scope="col"></th>
 
                         </tr>
@@ -269,10 +265,9 @@
                                 <td><?php echo $celular?></td>
                                 <td><?php echo $situacaoficha?></td>
                                 <td><?php echo $datadeNascimento?></td>
-                                <td><?php echo $inicio_tratamento?></td>
 
                                 <td>
-                                    <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarCadastro.php?id=<?php echo $idPessoa ?>" role="button"><i class="far fa-edit"></i></a> 
+                                    <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarCadastro.php?id=<?php echo $idPessoa?>" role="button"><i class="far fa-edit"></i></a> 
                                     <a class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick = "excluir(<?php echo $array['id_pessoa']?>)" role="button"> <i class="far fa-trash-alt"></i></a>
                                 </td>
                              </tr>

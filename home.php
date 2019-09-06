@@ -175,7 +175,7 @@
 				 	</tbody>
 				</table>
 				<span>
-					<input class = "text-center" type = "text" placeholder = "N Pacientes" disabled>
+					<input class = "text-center" type = "text" value = "N Pacientes" disabled>
 				</span>
 				<span>
 					<a href= "#"><input class = "btn btn-primary float-right" type = "submit" value = "Visualizar Agenda"></a>

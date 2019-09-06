@@ -20,7 +20,7 @@
 		<?php include 'header.php'?>
 		
 		
-		<div class = "container">
+		<div class = "pl-5 pr-5">
 
 
             <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#modal1">Cadastrar Produto</button>

@@ -32,6 +32,9 @@
             <div class = "row justify-content-center">
                 <button id = "buttonEdicao" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal1">Editar Dados do Paciente</button>
             </div>
+            <div class = "text-center">
+                <a href="estoque.php" style = "font-size:20px;">Voltar</a>
+            </div>
         </div>
 
         <!--Modal  Tela de Cadastro-->
@@ -47,7 +50,7 @@
 
                     <div class="modal-body">
                         <h5>Dados do Paciente:</h5>
-                        <form class = "form-group mt-2" action="atualizaCadastro.php" method="_GET">
+                        <form class = "form-group mt-2" action="atualizaCadastro.php" method="post">
 
                             <?php
                                 $sql = "SELECT * FROM pessoa WHERE id_pessoa = '$id'";
