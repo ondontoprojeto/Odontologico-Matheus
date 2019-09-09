@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Odonto - Estoque</title>
+		<title>Odonto - Ficha</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -9,8 +9,8 @@
 		<link rel="stylesheet" type="text/css" href="styleHeader.css">
         <script>
             function excluir(id){
-                if(confirm('Deseja realmente excluir este produto?')){
-                    location.href = 'deletarEstoque.php?id=' + id;   
+                if(confirm('Deseja realmente excluir esta ficha?')){
+                    location.href = 'deletarFicha.php?id=' + id;   
                 }
             }
         </script>
@@ -19,14 +19,19 @@
 		
 		<?php include 'header.php'?>
 
-        <h1 class = "text-center mb-4">Cadastro de Estoque</h1>
+        <h1 class = "text-center mb-4">Fichas de Pacientes</h1>
 		
 		
 		<div class = "pl-5 pr-5">
+            <div class = "d-inline-flex">
+                <form class="form-inline">
+                        <input class="form-control mr-2 ml-1" type="search" name = "nome">
+                        <button class="btn btn-success btn-md mr-3" type="submit">Pesquisar</button>
+                </form>
 
-
-            <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#modal1">Cadastrar Produto</button>
-            <input type="button" class ="btn btn-dark ml-5" onclick="window.print();" value="Imprimir">
+                <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#modal1">Nova Ficha</button>
+                <input type="button" class ="btn btn-dark ml-5" onclick="window.print();" value="Imprimir">
+            </div>
             <!--Modal-->
                 <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -76,17 +81,15 @@
                         </div>
                     </div>
                 </div>
-                <div class = "overflow-auto ml-1 mr-1" style = "max-height: 550px">
+                <div class = "overflow-auto" style = "max-height: 550px">
                     <table class="table w-100 mt-4">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">Código</th>
                                 <th scope="col">Nome </th>
-                                <th scope="col">Categoria</th>
-                                <th scope="col">Quantidade</th>
-                                <th scope="col">Fornecedor</th>
-                                <th scope ="col">Vencimento</th>
-                                <th scope = "col">Observações</th>
+                                <th scope="col">Data Nascimento</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Telefone</th>
                                 <th scope = "col"></th>
                             </tr>
                         </thead>
@@ -124,8 +127,6 @@
                                     <td><?php echo $categoria?></td>
                                     <td><?php echo $quantidade?></td>
                                     <td><?php echo $fornecedor?></td>
-                                    <td><?php echo $dtVencimento?></td>
-                                    <td><?php echo $complemento?></td>
                                     <td>
                                         <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarEstoque.php?id=<?php echo $idEstoque?>" role="button"><i class="far fa-edit"></i></a>
 
@@ -135,7 +136,7 @@
                             <?php } ?>
                         </tbody>
                     </table>
-                </div>
+                </div> 
             </div>     
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

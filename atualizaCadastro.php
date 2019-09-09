@@ -15,7 +15,6 @@
     $complemento = $_POST['complemento'];
     $bairro = $_POST['bairro'];
     $nascimento = $_POST['nascimento'];
-    $inicio_tratamento = $_POST['inicio_tratamento'];
     $cidade = $_POST['cidade'];
     $uf= $_POST['uf'];
     $situacaoficha = $_POST['situacaoficha'];
@@ -28,7 +27,7 @@
     $queixaprinc = $_POST['queixaprinc'];
 
 
-    $sql = "UPDATE pessoa SET `cpf`= '$cpf', `rg`= '$rg', `nome`='$nome', `orcamento`= '$orcamento', `telefone`='$telefone', `celular`='$celular', `email`= '$email', `cep`='$cep', `endereco`='$endereco', `complemento`= '$complemento', `bairro`='$bairro', `nascimento`='$nascimento', `inicio_tratamento` = '$inicio_tratamento', `cidade`='$cidade', `uf`='$uf', `situacaoficha`= '$situacaoficha', `doencabase`='$doencabase', `alergia`='$alergia', `medicamentos`='$medicamentos', `cirurgia`='$cirurgia', `internacoes`='$internacoes', `pa`='$pa', `queixaprinc`='$queixaprinc' WHERE `id_pessoa` = $id";
+    $sql = "UPDATE pessoa SET `cpf`= '$cpf', `rg`= '$rg', `nome`='$nome', `orcamento`= '$orcamento', `telefone`='$telefone', `celular`='$celular', `email`= '$email', `cep`='$cep', `endereco`='$endereco', `complemento`= '$complemento', `bairro`='$bairro', `nascimento`='$nascimento', `cidade`='$cidade', `uf`='$uf', `situacaoficha`= '$situacaoficha', `doencabase`='$doencabase', `alergia`='$alergia', `medicamentos`='$medicamentos', `cirurgia`='$cirurgia', `internacoes`='$internacoes', `pa`='$pa', `queixaprinc`='$queixaprinc' WHERE `id_pessoa` = $id";
 
 
     $atualizar = mysqli_query($con, $sql)

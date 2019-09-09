@@ -5,7 +5,6 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script src="https://kit.fontawesome.com/7b04e73c30.js"></script>
 		<link rel="stylesheet" type="text/css" href="styleHeader.css">
         <script>
             function excluir(id){
@@ -40,11 +39,7 @@
 
                         $result = mysqli_query($con, $sql);
 
-                        $totalRegistros = mysqli_num_rows ($result);
-                        
-                        
-                        
-                        
+                        $totalRegistros = mysqli_num_rows ($result);    
                     }           
                 ?>
                 <button type="button" class="btn btn-primary btn-md ml-2" data-toggle="modal" data-target="#modal1">Cadastrar Paciente</button>
@@ -235,7 +230,6 @@
                                 $complemento = $array['complemento'];
                                 $bairro = $array['bairro'];
                                 $nascimento = $array['nascimento'];
-                                $inicio_tratamento = $array['inicio_tratamento'];
                                 $cidade = $array['cidade'];
                                 $uf= $array['uf'];
                                 $situacaoficha = $array['situacaoficha'];
@@ -250,9 +244,6 @@
                                 //Ajuste da formatação da data DD/MM/AAAA
                                 $dtNasci = explode('-', $nascimento);
                                 $datadeNascimento = $dtNasci[2] . "-" . $dtNasci[1]. "-" . $dtNasci[0];
-
-                                $dtIniTrata = explode('-', $inicio_tratamento);
-                                $inicio_tratamento = $dtIniTrata[2] . "-" . $dtIniTrata[1]. "-" . $dtIniTrata[0];
 
 
                         ?>

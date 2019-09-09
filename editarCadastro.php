@@ -73,7 +73,6 @@
                                 $complemento = $array['complemento'];
                                 $bairro = $array['bairro'];
                                 $nascimento = $array['nascimento'];
-                                $inicio_tratamento = $array['inicio_tratamento'];
                                 $cidade = $array['cidade'];
                                 $uf= $array['uf'];
                                 $situacaoficha = $array['situacaoficha'];
