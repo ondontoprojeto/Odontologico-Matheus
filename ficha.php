@@ -37,43 +37,35 @@
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3 class="modal-title text-primary" id="modalTitle">Cadastro de Produtos</h3>
+                                <h3 class="modal-title text-primary" id="modalTitle">Ficha do Paciente</h3>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <h5 class="front-left">Descrição do Material</h5>
+                                <h5 class="front-left">Descrição do Paciente</h5>
                                 <form class = "form-group mt-2" action="cadastrarEstoque.php" method="post">
                                     <div class="form-group">
-                                        <label for="nroProduto">N° do Produto:</label>
+                                        <label for="nroProduto">N° da Ficha:</label>
                                         <input type="number" class="form-control" id="nroProduto" placeholder="" name = "nroproduto">
                                     </div>
                                     <div class="form-group">
-                                        <label for="nome">Nome do Produto:</label>
+                                        <label for="nome">Nome:</label>
                                         <input type="text" class="form-control" id="nome" placeholder="" name = "nomeproduto">
                                     </div>
                                     <div class="form-group">
-                                        <label for="categoria">Categoria:</label>
-                                        <input type="text" class="form-control" id="categoria" placeholder="" name = "categoria">
+                                        <label for="categoria">Data de Nascimento:</label>
+                                        <input type="date" class="form-control" id="categoria" placeholder="" name = "categoria">
                                     </div>
                                 <div class="form-group">
-                                        <label for="quanti">Quantidade:</label>
-                                        <input type="text" class="form-control" id="quanti" placeholder="" name = "quantidade">
+                                        <label for="quanti">Email:</label>
+                                        <input type="email" class="form-control" id="quanti" placeholder="" name = "quantidade">
                                     </div>
                                     <div class="form-group">
-                                        <label for="fornecedor">Fornecedor:</label>
-                                        <input type="text" class="form-control" id="fornecedor" placeholder="" name = "fornecedor">
+                                        <label for="fornecedor">Telefone:</label>
+                                        <input type="tel" class="form-control" id="fornecedor" placeholder="" name = "fornecedor">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="venci">Vencimento:</label>
-                                        <input type="date" class="form-control" id="venci" placeholder="" name = "vencimento">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="obser">Observações:</label>
-                                        <input type="text" class="form-control" id="obser" placeholder="" name = "complemento">
-                                    </div>
-                                    <input type="submit" class="btn btn-primary float-right" value = "Cadastrar">
+                                    <input type="submit" class="btn btn-primary float-right" value = "Gerar">
                                 </form>
                             </div>
                             <div class="modal-footer">
@@ -98,35 +90,49 @@
 
                                 include_once 'conexao.php';
 
-                                $sql = "SELECT * FROM estoque";
+                                $sql = "SELECT * FROM pessoa";
 
                                 $busca = mysqli_query($con, $sql);
 
                                 while($array = mysqli_fetch_array($busca)){
 
 
-                                    $idEstoque = $array['id_estoque'];
-                                    $nroProduto = $array['numeroproduto'];
-                                    $nomeProduto = $array['nomeproduto'];
-                                    $categoria = $array['categoria'];
-                                    $quantidade = $array['quantidade'];
-                                    $fornecedor = $array['fornecedor'];
-                                    $vencimento = $array['vencimento'];
+                                    $idPessoa = $array['id_pessoa'];
+                                    $cpf = $array['cpf'];
+                                    $rg = $array['rg'];
+                                    $nome = $array['nome'];
+                                    $orcamento = $array['orcamento'];
+                                    $telefone = $array['telefone'];
+                                    $celular = $array['celular'];
+                                    $email = $array['email'];
+                                    $cep = $array['cep'];
+                                    $endereco = $array['endereco'];
                                     $complemento = $array['complemento'];
-
+                                    $bairro = $array['bairro'];
+                                    $nascimento = $array['nascimento'];
+                                    $cidade = $array['cidade'];
+                                    $uf= $array['uf'];
+                                    $situacaoficha = $array['situacaoficha'];
+                                    $doencabase = $array['doencabase'];
+                                    $alergia = $array['alergia'];
+                                    $medicamentos = $array['medicamentos'];
+                                    $cirurgia = $array['cirurgia'];
+                                    $internacoes = $array['internacoes'];
+                                    $pa = $array['pa'];
+                                    $queixaprinc = $array['queixaprinc']; 
 
                                     //Ajuste da formatação da data DD/MM/AAAA
-                                    $dtVenci = explode('-', $vencimento);
-                                    $dtVencimento = $dtVenci[2] . "-" . $dtVenci[1]. "-" . $dtVenci[0];
+                                    $dtNasci = explode('-', $nascimento);
+                                    $dtNascimento = $dtNasci[2] . "-" . $dtNasci[1]. "-" . $dtNasci[0];
 
 
                             ?>
                                 <tr>
-                                    <td><?php echo $nroProduto?></td>
-                                    <td><?php echo $nomeProduto?></td>
-                                    <td><?php echo $categoria?></td>
-                                    <td><?php echo $quantidade?></td>
-                                    <td><?php echo $fornecedor?></td>
+                                    <td><?php echo $idPessoa?></td>
+                                    <td><?php echo $nome?></td>
+                                    <td><?php echo $dtNascimento?></td>
+                                    <td><?php echo $email?></td>
+                                    <td><?php echo $telefone?></td>
                                     <td>
                                         <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarEstoque.php?id=<?php echo $idEstoque?>" role="button"><i class="far fa-edit"></i></a>
 

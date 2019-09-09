@@ -107,7 +107,7 @@
 
                                     <div class="form-group">
                                         <label for="complemento">Complemento:</label>
-                                        <input type="text" class="form-control" id="complemento" placeholder="" name = "complemento">
+                                        <input type="text" class="form-control" id="complemento" placeholder="" Digite seuname = "complemento">
                                     </div>
 
 
@@ -120,12 +120,6 @@
                                         <label for="nascimento">Data de Nascimento:</label>
                                         <input type="date" class="form-control" id="nascimento" placeholder="" name = "nascimento">
                                     </div>	
-
-                                    <div class="form-group">
-                                        <label for="inicio_tratamento">Inicio do Tratamento:</label>
-                                        <input type="date" class="form-control" id="inicio_tratamento" placeholder="" name = "inicio_tratamento">
-                                    </div>	
-
                                     <div class="form-group">
                                         <label for="cidade">Cidade:</label>
                                         <input type="text" class="form-control" id="cidade" placeholder="" name = "cidade">
@@ -190,7 +184,7 @@
                     </div>
                 </div>
             </span>
-            <div class = "overflow-auto ml-1 mr-1" style = "max-height: 450px">
+            <div class = "overflow-auto ml-1 mr-1" style = "max-height: 550px">
                 <table class="table border table-striped">
                     <thead id = "theadCadastro" class = "thead-dark">
                         <tr>

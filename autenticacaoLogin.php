@@ -10,9 +10,9 @@
 	$result = mysqli_query($con, $sql);
 
 	if(mysqli_num_rows($result) == 1){
-		$row = mysqli_fetch_array($result);
-		$_SESSION["login"] = $row['login'];
-		$_SESSION['senha'] = $row['senha'];
+		$array = mysqli_fetch_array($result);
+		$_SESSION["login"] = $array['login'];
+		$_SESSION['senha'] = $array['senha'];
 		header("location:home.php");
 	} else {
 		$msg = "Login ou Senha Inválidas!";
