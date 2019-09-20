@@ -124,7 +124,7 @@
 					<tbody id = "tbodyProxi">
 				  		<tr>
 				      		<td>8:00</td>
-				      		<td>Leandro Cerqueira</td>
+				      		<td>Leandro Cerqueira pereira da silva</td>
 				      		<td>
 				      			<i class="fa fa-circle text-success" aria-hidden="true"></i>
 				      		</td>
