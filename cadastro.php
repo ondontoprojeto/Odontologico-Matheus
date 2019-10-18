@@ -42,83 +42,83 @@
                             <div class="modal-body justify-content-around">
                                 <h5>Dados Pessoais:</h5>
                                 <form class = "form-group mt-2" action="cadastraPessoa.php" method="post">
-                                    <div class="form-group w-100">
-                                        <label for="cpf">CPF:</label>
-                                        <input type="text" class="form-control" id="cpf" placeholder="" name = "cpf">
-                                    </div>
-
-                                    <div class="form-group w-100">
-                                        <label for="rg">RG:</label>
-                                        <input type="text" class="form-control" id="rg" placeholder="" name = "rg">
+                                    <div class = "form-row">
+                                        <div class="form-group w-100 col-md-6">
+                                            <label for="cpf">CPF:</label>
+                                            <input type="text" class="form-control" id="cpf" placeholder="" name = "cpf">
+                                        </div>
+                                        <div class="form-group w-100 col-md-6">
+                                            <label for="rg">RG:</label>
+                                            <input type="text" class="form-control" id="rg" placeholder="" name = "rg">
+                                        </div>
                                     </div>
 
                                     <div class="form-group w-100">
                                         <label for="nome">Nome:</label>
                                         <input type="text" class="form-control" id="nome" placeholder="" name = "nome">
                                     </div>
-                    
-
+                                    <div class="form-group">
+                                        <label for="email">Email:</label>
+                                        <input type="email" class="form-control" id="email" placeholder="" name = "email">
+                                    </div>
                                     <div class="form-group">
                                         <label for="orcamento">Orçamento:</label>
                                         <input type="text" class="form-control" id="orcamento" placeholder="" name = "orcamento">
                                     </div>
-
-                                    <div class="form-group">
-                                        <label for="telefone">Telefone:</label>
-                                        <input type="text" class="form-control" id="telefone" placeholder="" name = "telefone">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="celular">Celular:</label>
-                                        <input type="text" class="form-control" id="celular" placeholder="" name = "celular">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="email">Email:</label>
-                                        <input type="email" class="form-control" id="email" placeholder="" name = "email">
-                                    </div>                              
-
-
-                                    <div class="form-group">
-                                        <label for="cep">CEP:</label>
-                                        <input type="text" class="form-control" id="cep" placeholder="" name = "cep">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="endereco">Endereço:</label>
-                                        <input type="endereco" class="form-control" id="endereco" placeholder="" name = "endereco">
-                                    </div>  
-
-                                    <div class="form-group">
-                                        <label for="complemento">Complemento:</label>
-                                        <input type="text" class="form-control" id="complemento" placeholder="" Digite seuname = "complemento">
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <label for="bairro">Bairro:</label>
-                                        <input type="text" class="form-control" id="bairro" placeholder="" name = "bairro">
-                                    </div>
-
                                     <div class="form-group">
                                         <label for="nascimento">Data de Nascimento:</label>
                                         <input type="date" class="form-control" id="nascimento" placeholder="" name = "nascimento">
                                     </div>  
-                                    <div class="form-group">
-                                        <label for="cidade">Cidade:</label>
-                                        <input type="text" class="form-control" id="cidade" placeholder="" name = "cidade">
+
+                                    <div class = "form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="telefone">Telefone:</label>
+                                            <input type="text" class="form-control" id="telefone" placeholder="" name = "telefone">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="celular">Celular:</label>
+                                            <input type="text" class="form-control" id="celular" placeholder="" name = "celular">
+                                        </div>
+                                    </div>     
+
+                                    <div class="form-row">
+                                        <div class="form-group col-md-5">
+                                            <label for="endereco">Endereço:</label>
+                                            <input type="endereco" class="form-control" id="endereco" placeholder="" name = "endereco">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="bairro">Bairro:</label>
+                                            <input type="text" class="form-control" id="bairro" placeholder="" name = "bairro">
+                                        </div> 
+                                        <div class="form-group col-md-3">
+                                            <label for="cep">CEP:</label>
+                                            <input type="text" class="form-control" id="cep" placeholder="" name = "cep">
+                                        </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="uf">UF:</label>
-                                        <input type="text" class="form-control" id="uf" placeholder="" name = "uf">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-10">
+                                            <label for="Cidade">Cidade:</label>
+                                            <input type="text" class="form-control" id="Cidade" name = "cidade">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="UF">UF:</label>
+                                            <input type="text" class="form-control" name = "uf" id="UF">
+                                        </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="situacaoficha">Situação da Ficha:</label>
-                                        <input type="text" class="form-control" id="situacaoficha" placeholder="" name = "situacaoficha">
+                                     <div class="form-group w-100">
+                                        <label for="Complemento">Complemento:</label>
+                                        <input type="text" class="form-control" id="Complemento" placeholder="" name = "complemento">
                                     </div>
-
+                                    <div class="form-group">
+                                        <label>Situação da ficha:</label>
+                                        <select name="situacaoficha" class="form-control">
+                                            <option value="" disabled selected>- Escolha -</option>
+                                            <option value="ativa">Ativa</option>
+                                            <option value="inativa">Inativa</option>
+                                        </select>
+                                    </div>
                                     <div class = "mb-2">
                                         <h5>-----------------------Anamnese---------------------</h5>
                                     </div>  
@@ -171,26 +171,25 @@
                 <?php
                     if(isset($_GET["nome"])){
                         $nome = $_GET["nome"];
-                        
                         include_once 'conexao.php';
-                        
                         $sql = "SELECT * FROM pessoa WHERE nome
                         LIKE '{$nome}%'";
+                      
 
                         if($nome == "" || $nome == "%" || $nome == "'"){ ?>
                             <div class = "container">
                                 <div class="alert alert-danger mt-5" role="alert">
                                     <h4 class="alert-heading">Valor digitado inválido!</h4>
-                                    <p>Digite um valor válido para consulta!</p>
+                                    <p>Você precisa digitar um valor para consultar um paciente;</p>
                                     <hr>
                                     <p class="mb-0">Sistema Odontológico</p>
                                 </div>
                             </div>
                         <?php 
                         } else {
-                        $result = mysqli_query($con, $sql); 
+                        $buscar = mysqli_query($con, $sql); 
                         
-                        $totalRegistros = mysqli_num_rows($result);
+                        $totalRegistros = mysqli_num_rows($buscar);
 
                         if($totalRegistros > 0){
                 ?>
@@ -202,44 +201,65 @@
                             <th scope="col">CPF</th>
                             <th scope="col">RG</th>						
                             <th scope="col">Nome</th>
-                            <th scope="col">Orçamento</th>
                             <th scope="col">Telefone</th>
                             <th scope="col">Celular</th>	
-                            <th scope="col">Ficha</th>	
-                            <th scope="col">Data de Nasci.</th>
+                            <!--<th scope="col">Ficha</th>	
+                            <th scope="col">Data de Nasci.</th> -->
                             <th scope="col"></th>
                         </tr>
                     </thead>
 
                     <tbody id = "tbodyCadastro">
-                    <?php
-                            while($array = mysqli_fetch_array($result)){
-
+                        <?php
+                            while($array = mysqli_fetch_array($buscar)){
                                 $idPessoa = $array['id_pessoa'];
-                                $nascimento = $array['nascimento'];
-                                $dtNasci = explode('-', $nascimento);
-                                $datadeNascimento = $dtNasci[2] . "-" . $dtNasci[1]. "-" . $dtNasci[0];
-                        ?>
+                                //$situacaoficha = $array['situacaoficha'];
+                                //$nascimento = $array['nascimento'];
+                                //$dtNasci = explode('-', $nascimento);
+                                //$datadeNascimento = $dtNasci[2] . "-" . $dtNasci[1]. "-" . $dtNasci[0];
+                            ?>
                             <tr>
-                                <td><?php echo $array['cpf'];?></td>
-                                <td><?php echo $array['rg'];?></td>
-                                <td><?php echo $array['nome'];?></td>
-                                <td><?php echo $array['orcamento'];?></td>
-                                <td><?php echo $array['telefone'];?></td>
-                                <td><?php echo $array['celular'];?></td>
-                                <td><?php echo $array['situacaoficha'];?></td>
-                                <td><?php echo $datadeNascimento?></td> 
-                                <td>
-                                    <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarCadastro.php?id=<?php echo $idPessoa?>" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> 
-                                    <a class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick = "excluir(<?php echo $array['id_pessoa']?>)" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                <td><?php echo $array['cpf']?></td>
+                                <td><?php echo $array['rg']?></td>
+                                <td><?php echo $array['nome']?></td>
+                                <!--<td><?php echo $orcamento?></td>-->
+                                <td><?php echo $array['telefone']?></td>
+                                <td><?php echo $array['celular']?></td>
+                                <!--<td><?php echo $situacaoficha?></td>
+                                <td><?php echo $datadeNascimento?></td> -->
+                                <td class = "d-flex justify-content-around">
+
+                                    <a style = "font-size:15px" class="btn btn-success btn-sm" href="consulta.php" role="button">
+                                        <i class="fa fa-medkit mr-2" aria-hidden="true"></i>
+                                        Consultas
+                                    </a>
+
+                                    <a style = "font-size:15px" class="btn btn-primary btn-sm"  style="color:#fff" href="#" role="button">
+                                        <i class="fa fa-address-book-o mr-2" aria-hidden="true"></i>
+                                        Visualizar Ficha
+                                    </a>
+                                    <a style = "font-size:15px" class="btn btn-warning btn-sm text-white"  style="color:#fff" href="editarCadastro.php?id=<?php echo $idPessoa?>" role="button">
+                                        <i class="fa fa-pencil-square-o mr-2" aria-hidden="true"></i>
+                                        Editar
+                                    </a> 
+                                    <a style = "font-size:15px" class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick = "excluir(<?php echo $array['id_pessoa']?>)" role="button">
+                                        <i class="fa fa-trash-o mr-2" aria-hidden="true"></i>
+                                        Excluir
+                                    </a>
+
+                                    <!--<a class="btn btn-success btn-sm"  style="color:#fff" href="consulta.php (<?php echo $array['id_atendimento']?>)" role="button"><i  aria-hidden="true">CONSULTAS</i></a>-->
+
+                                    
                                 </td>
                             </tr>
+                        <?php
+                        };?>
                        </tbody>
                     </table>
                 </div>
             </div>
-                            <?php
-                }
+                            
+                    <?php
                     } else {?>
                         <div class = "container">  
                             <div class="alert alert-primary mt-5" role="alert">

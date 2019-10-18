@@ -14,32 +14,6 @@
 	font-size: 10px;
 	font-style:bold;
 }
-	/* Tabela Próximos Pacientes */
-
-#tableProxi {
-    width: 100%;
-    display:block;
-    border:1px solid black;
-}
-#theadProxi2, #theadProxi {
-    display: inline-block;
-    width: 100%;
-}
-#theadProxi2 th{
-	width:350px;
-}
-#tbodyProxi {
-    height: 150px;
-    display: inline-block;
-    width: 100%;
-    overflow: auto;
-}
-  
-#tbodyProxi td{
-	width:1000px;
-}
-
-
 	/* Tabela Aniversariantes do mês */
 #theadAni{
     display: inline-block;
@@ -58,7 +32,6 @@
 #tbodyAni td{
 	width:1000px;
 }
-
 	/*Tabela Procedimentos Realizados*/
 #theadProce2{
 	display:inline-block;
