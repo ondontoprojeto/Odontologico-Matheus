@@ -9,7 +9,7 @@
     <script>
         function excluir(id){
             if(confirm('Deseja realmente excluir este produto?')){
-                location.href = 'deletarEstoque.php?id=' + id;   
+                location.href = 'cancelarConsulta.php?id=' + id;   
             }
         }
     </script>
@@ -81,8 +81,8 @@
             <table class="table w-100 mt-4">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Nome Consulta</th>
-                        <th scope="col">data</th>
+                        <th scope="col">Nome Paciente</th>
+                        <th scope="col">Data</th>
                         <th scope="col">Descrição</th>
                         <th scope="col">Dentista</th>                                
                         <th scope = "col"></th>
@@ -90,28 +90,29 @@
                 </thead>
                 <tbody>
                     <?php
+                        $id = $_GET['nome'];
                         include_once 'conexao.php';
-                        $sql = "SELECT * FROM atendimento";
+                        $sql = "SELECT * FROM consulta";
                         $busca = mysqli_query($con, $sql);
 
                         while($array = mysqli_fetch_array($busca)){
                             $nome = $array['nome'];
-                            $data = $array['data'];
+                            $data = $array['dia'];
                             $descricao = $array['descricao'];
-                            $dentista = $array['dentista'];                             
+                            $dentista = $array['nomedentista'];                             
                         ?>
 
                         <tr>
-                            <td><?php echo $nome?></td>
+                            <td><?php echo $nome?>?></td>
                             <td><?php echo $data?></td>
                             <td><?php echo $descricao?></td>
                             <td><?php echo $dentista?></td>
                             <td class = "d-flex justify-content-around">
-                                <a class="btn btn-secondary btn-sm"  style="color:#fff" href="#" onclick = "excluir(<?php echo $array['id_pessoa']?>)" role="button"><i  aria-hidden="true">PROCEDIMENTOS</i></a>           
+                                <a class="btn btn-secondary btn-sm"  style="color:#fff" href="#" onclick = "excluir(<?php echo $array['id_pessoa']?>)" role="button"><i  aria-hidden="true">Procedimentos</i></a>           
 
-                                <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarEstoque.php?id=<?php echo $idEstoque?>" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarEstoque.php?id=<?php echo $idEstoque?>" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar </a>
 
-                                <a class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick="excluir(<?php echo $array['id_estoque']; ?>)" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                <a class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick="excluir(<?php echo $array['id_estoque']; ?>)" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i> Excluir</a>
                             </td>
                         </tr>
                     <?php } ?>

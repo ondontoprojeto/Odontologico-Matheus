@@ -37,22 +37,30 @@
                             <div class="modal-body">
                                 <h5 class="front-left">Descrição do Material</h5>
                                 <form class = "form-group mt-2" action="cadastrarEstoque.php" method="post">
-                                    <div class="form-group">
-                                        <label for="nroProduto">N° do Produto:</label>
-                                        <input type="number" class="form-control" id="nroProduto" placeholder="" name = "nroproduto">
+
+                                    <div class = "form-row">
+                                        <div class="form-group col-md-4">
+                                            <label for="nroProduto">N° do Produto:</label>
+                                            <input type="number" class="form-control" id="nroProduto" placeholder="" name = "nroproduto">
+                                        </div>
+
+                                        <div class="form-group col-md-8">
+                                            <label for="nome">Nome do Produto:</label>
+                                            <input type="text" class="form-control" id="nome" placeholder="" name = "nomeproduto">
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="nome">Nome do Produto:</label>
-                                        <input type="text" class="form-control" id="nome" placeholder="" name = "nomeproduto">
+
+                                    <div class = "form-row">
+                                        <div class="form-group col-md-9">
+                                            <label for="categoria">Categoria:</label>
+                                            <input type="text" class="form-control" id="categoria" placeholder="" name = "categoria">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="quanti">Quantidade:</label>
+                                            <input type="text" class="form-control" id="quanti" placeholder="" name = "quantidade">
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="categoria">Categoria:</label>
-                                        <input type="text" class="form-control" id="categoria" placeholder="" name = "categoria">
-                                    </div>
-                                <div class="form-group">
-                                        <label for="quanti">Quantidade:</label>
-                                        <input type="text" class="form-control" id="quanti" placeholder="" name = "quantidade">
-                                    </div>
+
                                     <div class="form-group">
                                         <label for="fornecedor">Fornecedor:</label>
                                         <input type="text" class="form-control" id="fornecedor" placeholder="" name = "fornecedor">
@@ -63,7 +71,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="obser">Observações:</label>
-                                        <input type="text" class="form-control" id="obser" placeholder="" name = "complemento">
+                                        <textarea class="form-control" id="obser" rows="3" name = "complemento"></textarea>
                                     </div>
                                     <input type="submit" class="btn btn-primary float-right" value = "Cadastrar">
                                 </form>
@@ -97,9 +105,6 @@
                                 $busca = mysqli_query($con, $sql);
 
                                 while($array = mysqli_fetch_array($busca)){
-
-
-                                    $idEstoque = $array['id_estoque'];
                                     $nroProduto = $array['numeroproduto'];
                                     $nomeProduto = $array['nomeproduto'];
                                     $categoria = $array['categoria'];
@@ -107,7 +112,6 @@
                                     $fornecedor = $array['fornecedor'];
                                     $vencimento = $array['vencimento'];
                                     $complemento = $array['complemento'];
-
 
                                     //Ajuste da formatação da data DD/MM/AAAA
                                     $dtVenci = explode('-', $vencimento);
@@ -124,12 +128,12 @@
                                     <td><?php echo $dtVencimento?></td>
                                     <td><?php echo $complemento?></td>
                                     <td class = "d-flex justify-content-around">
-                                        <a style = "font-size: 15px" class="btn btn-warning btn-sm text-white"  style="color:#fff" href="editarEstoque.php?id=<?php echo $idEstoque?>" role="button">
+                                        <a style = "font-size: 15px" class="btn btn-warning btn-sm text-white"  style="color:#fff" href="editarEstoque.php?id=<?php echo $array['estoque_id']?>" role="button">
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                             Editar
                                         </a>
 
-                                        <a style = "font-size: 15px" class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick="excluir(<?php echo $array['id_estoque']; ?>)" role="button">
+                                        <a style = "font-size: 15px" class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick="excluir(<?php echo $array['estoque_id']; ?>)" role="button">
                                             <i class="fa fa-trash-o" aria-hidden="true"></i>
                                             Excluir
                                         </a>

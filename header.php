@@ -71,17 +71,6 @@
 				</ul>
 
 				<ul class="d-flex flex-column nav-item">
-					<a href="ficha.php">
-						<div class="d-flex justify-content-center">
-							<i id = "ficha"class="fa fa-file-text-o fa-3x" aria-hidden="true"></i>
-						</div>
-						<div class="d-flex justify-content-center text-dark">
-							<b>Ficha</b>
-						</div>
-					</a>
-				</ul>
-
-				<ul class="d-flex flex-column nav-item">
 					<a href="estoque.php ?>">
 						<div class="d-flex justify-content-center">
 							<i id = "estoque"class="fa fa-stack-overflow fa-3x" aria-hidden="true"></i>
@@ -92,7 +81,7 @@
 					</a>
 				</ul>
 
-				<ul class="d-flex flex-column nav-item">
+				<!-- <ul class="d-flex flex-column nav-item">
 					<a href="relatorio.php">
 						<div class="d-flex justify-content-center">
 							<i id = "relatorio" class="fa fa-list-ul fa-3x" aria-hidden="true"></i>
@@ -101,7 +90,7 @@
 							<b>Relatório</b>
 						</div>
 					</a>
-				</ul>
+				</ul> -->
 
 				<ul class="d-flex flex-column nav-item">
 					<a href="adm.php">

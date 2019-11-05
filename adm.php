@@ -27,6 +27,13 @@
           }
         }
     </script>
+     <script>
+      function excluirDentista(id){
+          if(confirm('Deseja realmente excluir este Dentista?')){
+              location.href = 'deletarDentista.php?id=' + id;   
+          }
+        }
+    </script>
   </head>
   <body>
 
@@ -145,9 +152,9 @@
                 <td><?php echo $nome?></td>                
                 <td><?php echo $login?></td>              
                 <td><?php echo $perfil?></td>             
-                <td>
-                  <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarCadastro.php?id=<?php echo $array['id_user'] ?>" role="button"><i class="fa fa-pencil-square-o"></i></a> 
-                  <a class="btn btn-danger btn-sm"  style="color:#fff" onclick = "excluirLogin(<?php echo $array['id_user']?>)" role="button"><i class="fa fa-trash-o"></i></a>
+                <td class = "d-flex justify-content-end">
+                  <a class="btn btn-warning btn-sm mr-3"  style="color:#fff" href="editarLogin.php?id=<?php echo $array['id_user'] ?>" role="button"><i class="fa fa-pencil-square-o"></i> Editar</a> 
+                  <a class="btn btn-danger btn-sm"  style="color:#fff" onclick = "excluirLogin(<?php echo $array['id_user']?>)" role="button"><i class="fa fa-trash-o"></i> Excluir</a>
                 </td>
               </tr>
             <?php } ?>
@@ -159,17 +166,17 @@
           <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                   <div class="modal-header">
-                      <h3 class="modal-title text-primary ml-5" id="modalTitle">Cadastro Tipo de Consulta</h3>
+                      <h3 class="modal-title text-primary ml-5" id="modalTitle">Tipo do Atendimento</h3>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                       </button>
                   </div>
                   <div class="modal-body2">
-                    <h5 class = "ml-4">Nome da Consulta</h5>
-                      <form class = "form-group mt-2 ml-4 mr-4" action="tipoconsulta.php  ?>" method="post">
+                    <h5 class = "ml-4">Nome do Atendimento</h5>
+                      <form class = "form-group mt-2 ml-4 mr-4" action="admcadatendimento.php?>" method="post">
                           <div class="form-group">
-                            <label for="nomeconsulta">Nome:</label>
-                            <input type="text" class="form-control" id="nomeconsulta" placeholder="" name = "nomeconsulta">
+                            <label for="atendimentonome">Nome:</label>
+                            <input type="text" class="form-control" id="atendimentonome" placeholder="" name = "atendimentonome">
                           </div>
                           
                           <input type="submit" class="btn btn-primary float-right" value = "Cadastrar">
@@ -186,23 +193,23 @@
         <table class="table border table-striped">
           <thead id = "theadCadastro" class = "bg-light">
             <tr>
-              <th scope="col">Nome da Consulta</th>                    
+              <th scope="col">Nome do Atendimento</th>                    
               <th></th>  
             </tr>
           </thead>
           <tbody id = "tbodyCadastro">
             <?php
               include_once 'conexao.php';
-              $sql = "SELECT * FROM tipoconsulta";
+              $sql = "SELECT * FROM atendimento_tipo";
               $busca = mysqli_query($con, $sql);
               while($array = mysqli_fetch_array($busca)){             
-                $nomeconsulta = $array['nomeconsulta']; 
+                $atendimentonome = $array['atendimentonome']; 
             ?>
               <tr>
-                <td><?php echo $nomeconsulta?></td>                                   
-                <td>
-                  <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarAtendimento.php?id=<?php echo $array['id_atendimento'] ?>" role="button"><i class="fa fa-pencil-square-o"></i></a> 
-                  <a class="btn btn-danger btn-sm"  style="color:#fff" onclick = "excluirAtendimento(<?php echo $array['id_atendimento']?>)" role="button"><i class="fa fa-trash-o"></i></a>
+                <td><?php echo $atendimentonome?></td>                                   
+                 <td class = "d-flex justify-content-end">
+                  <a class="btn btn-warning btn-sm mr-3"  style="color:#fff" href="editarCadastro.php?id=<?php echo $array['atendimentotipo_id'] ?>" role="button"><i class="fa fa-pencil-square-o"></i> Editar</a> 
+                  <a class="btn btn-danger btn-sm"  style="color:#fff" onclick = "excluirAtendimento(<?php echo $array['atendimentotipo_id']?>)" role="button"><i class="fa fa-trash-o"></i> Excluir</a>
                 </td>
               </tr>  
             <?php } ?>
@@ -257,7 +264,8 @@
         <table class="table border table-striped">
           <thead id = "theadCadastro" class = "bg-light">
             <tr>
-              <th scope="col" colspan = "2">Nome Dentista</th>
+              <th scope="col">Nome Dentista</th>
+              <th scope="col">CRO</th>
               <th></th>                   
             </tr>
           </thead>
@@ -267,16 +275,16 @@
               $sql = "SELECT * FROM dentista";
               $busca = mysqli_query($con, $sql);
               while($array = mysqli_fetch_array($busca)){                       
-              $nomedentista = $array['nomedentista'];
+              $nomedentista = $array['nome'];
               $cro = $array['cro'];  
             ?>
             <tr>
               <td><?php echo $nomedentista?></td>
               <td><?php echo $cro?></td>                
-              <td>
-                <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarProcedimento.php?id=<?php echo $array['id_procedimento']?>" role="button"><i class="fa fa-pencil-square-o"></i></a> 
-                <a class="btn btn-danger btn-sm"  style="color:#fff" onclick = "excluirProcedimento(<?php echo $array['id_procedimento']?>)" role="button"><i class="fa fa-trash-o"></i></a>
-              </td>
+               <td class = "d-flex justify-content-end">
+                  <a class="btn btn-warning btn-sm mr-3"  style="color:#fff" href="editarCadastro.php?id=<?php echo $array['id'] ?>" role="button"><i class="fa fa-pencil-square-o"></i> Editar</a> 
+                  <a class="btn btn-danger btn-sm"  style="color:#fff" onclick = "excluirDentista(<?php echo $array['id']?>)" role="button"><i class="fa fa-trash-o"></i> Excluir</a>
+                </td>
             </tr>   
             <?php } ?>
           </tbody>
@@ -298,8 +306,8 @@
                 <h5 class = "ml-4">Tipo de Procedimentos:</h5>
               <form class = "form-group mt-2 ml-4 mr-4" action="admCadProcedimento.php" method="post">
                 <div class="form-group">
-                  <label for="nomeProcedimento">Nome:</label>
-                  <input type="text" class="form-control" id="nomeProcedimento" placeholder="" name = "nomeprocedimento">
+                  <label for="nome">Nome:</label>
+                  <input type="text" class="form-control" id="nome" placeholder="" name = "nome">
                 </div>                            
                 <input type="submit" class="btn btn-primary float-right" value = "Cadastrar">
               </form>
@@ -322,17 +330,17 @@
           <tbody id = "tbodyCadastro">
             <?php
               include_once 'conexao.php';
-              $sql = "SELECT * FROM procedimento";
+              $sql = "SELECT * FROM procedimento_tipo";
               $busca = mysqli_query($con, $sql);
               while($array = mysqli_fetch_array($busca)){                       
-              $nomeprocedimento = $array['tipoproce']; 
+              $nome = $array['nome']; 
             ?>
             <tr>
-              <td><?php echo $nomeprocedimento?></td>                
-              <td>
-                <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarProcedimento.php?id=<?php echo $array['id_procedimento']?>" role="button"><i class="fa fa-pencil-square-o"></i></a> 
-                <a class="btn btn-danger btn-sm"  style="color:#fff" onclick = "excluirProcedimento(<?php echo $array['id_procedimento']?>)" role="button"><i class="fa fa-trash-o"></i></a>
-              </td>
+              <td><?php echo $nome?></td>                
+             <td class = "d-flex justify-content-end">
+                  <a class="btn btn-warning btn-sm mr-3"  style="color:#fff" href="editarCadastro.php?id=<?php echo $array['id'] ?>" role="button"><i class="fa fa-pencil-square-o"></i> Editar</a> 
+                  <a class="btn btn-danger btn-sm"  style="color:#fff" onclick = "excluirProcedimento(<?php echo $array['id']?>)" role="button"><i class="fa fa-trash-o"></i> Excluir</a>
+                </td>
             </tr>   
             <?php } ?>
           </tbody>

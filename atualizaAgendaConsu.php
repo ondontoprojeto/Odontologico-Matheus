@@ -1,17 +1,13 @@
 <?php
     include 'conexao.php';
     $id = $_POST['id'];
-    $nome =  $_POST['nome'];
-    $nomeconsulta =  $_POST['nomeconsulta'];    
     $dia =  $_POST['dia'];
     $hora =  $_POST['hora'];
     $descricao =  $_POST['descricao'];
-    $nomedentista =  $_POST['nomedentista'];
+    $dentista_id =  $_POST['nomedentista'];
 
 
-    $sql = "UPDATE `atend` SET `nome` = '$nome',`nomeconsulta` = '$nomeconsulta',`dia` = '$dia',`hora` = '$hora',`descricao` = '$descricao',`nomedentista` = '$nomedentista', WHERE id_atend = $id";
-
-
+    $sql = "UPDATE `atendimento` SET `dentista_id` = $dentista_id,`data` = '$dia', `descricao` = '$descricao', `hora` = '$hora' WHERE id = $id";
     $atualizar = mysqli_query($con, $sql);
 ?>
 

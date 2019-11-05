@@ -2,29 +2,33 @@
 
 	include_once 'conexao.php';
 
-	//Marcação de consulta
-	
-	$nome =  $_POST['nome'];
+    
+	$paciente_id   =  $_POST['paciente_id'];	
+	$dentista_id   =  $_POST['dentista_id'];	
+	$descricao     =  $_POST['descricao'];	
+	$data          =  $_POST['data'];	
+	$hora          =  $_POST['hora'];	
+
+    /*
 	$nomeconsulta =  $_POST['nomeconsulta'];	
 	$dia =  $_POST['dia'];
 	$hora =  $_POST['hora'];
 	$descricao =  $_POST['descricao'];
 	$nomedentista =  $_POST['nomedentista'];
-	$procedimento_1 = $_POST['tipoproce1'];
-	$valor_1 = $_POST['valor1'];
+    */
 
-   echo $sql = "INSERT INTO atend VALUES(null, '{$nome}','{$nomeconsulta}','{$dia}','{$hora}','{$descricao}', '{$nomedentista}','{$procedimento_1}','{$valor_1}')"; 
+/*	$consulta = "SELECT * FROM paciente WHERE nome = '$nome'";
+    $buscar = mysqli_query($con, $consulta);
 
-   //echo $sql = "INSERT INTO paciente VALUES(null, '{$nome}',{id_pessoa}')"; 
+    while($array = mysqli_fetch_array($buscar)){
+    	$idPaciente = $array['paciente_id'];
+        $nome = $array['nome'];
+    };
+    */
 
-
-
-
-   
-
-	// $inserir = mysqli_query($con, $sql);
-
+   	$sql = "INSERT INTO atendimento VALUES(null, '{$paciente_id}', '{$dentista_id}', '{$data}', '{$descricao}', '{$hora}')"; 
+   	echo $sql;
 	$msg = (mysqli_query($con, $sql)) ? "Gravado com sucesso" : "Erro ao gravar";
 
-	header("location:msgAgenda.php?msg=".$msg);
+	header("location:agenda.php?msg=".$msg);
 ?>

@@ -52,10 +52,15 @@
                                             <input type="text" class="form-control" id="rg" placeholder="" name = "rg">
                                         </div>
                                     </div>
-
-                                    <div class="form-group w-100">
-                                        <label for="nome">Nome:</label>
-                                        <input type="text" class="form-control" id="nome" placeholder="" name = "nome">
+                                    <div class = "form-row">
+                                        <div class="form-group col-md-7">
+                                            <label for="nome">Nome:</label>
+                                            <input type="text" class="form-control" id="nome" placeholder="" name = "nome">
+                                        </div>
+                                        <div class="form-group col-md-5">
+                                            <label for="nascimento">Data de Nascimento:</label>
+                                            <input type="date" class="form-control" id="nascimento" placeholder="" name = "nascimento">
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email:</label>
@@ -65,10 +70,6 @@
                                         <label for="orcamento">Orçamento:</label>
                                         <input type="text" class="form-control" id="orcamento" placeholder="" name = "orcamento">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="nascimento">Data de Nascimento:</label>
-                                        <input type="date" class="form-control" id="nascimento" placeholder="" name = "nascimento">
-                                    </div>  
 
                                     <div class = "form-row">
                                         <div class="form-group col-md-6">
@@ -112,7 +113,7 @@
                                         <input type="text" class="form-control" id="Complemento" placeholder="" name = "complemento">
                                     </div>
                                     <div class="form-group">
-                                        <label>Situação da ficha:</label>
+                                        <label>Situação da Ficha:</label>
                                         <select name="situacaoficha" class="form-control">
                                             <option value="" disabled selected>- Escolha -</option>
                                             <option value="ativa">Ativa</option>
@@ -121,44 +122,47 @@
                                     </div>
                                     <div class = "mb-2">
                                         <h5>-----------------------Anamnese---------------------</h5>
-                                    </div>  
+                                    </div>
+                                    <div class="form-row">  
+                                        <div class="form-group col-md-6">
+                                            <label for="data">Doenças de Base:</label>
+                                            <input type="text" class="form-control" id="doencabase" placeholder="" name = "doencabase">
+                                        </div>
 
-                                    <div class="form-group">
-                                        <label for="data">Doenças de Base:</label>
-                                        <input type="text" class="form-control" id="doencabase" placeholder="" name = "doencabase">
+                                        <div class="form-group col-md-6">
+                                            <label for="alergia">Alergias:</label>
+                                            <input type="text" class="form-control" id="alergia" placeholder="" name = "alergia">
+                                        </div> 
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="medicamentos">Medicamentos:</label>
+                                            <input type="text" class="form-control" id="medicamentos" placeholder="" name = "medicamentos">
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            <label for="cirurgia">Cirurgias:</label>
+                                            <input type="text" class="form-control" id="cirurgia" placeholder="" name = "cirurgia">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="internacoes">Internacões:</label>
+                                            <input type="text" class="form-control" id="internacoes" placeholder="" name = "internacoes">
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            <label for="pa">P.A:</label>
+                                            <input type="text" class="form-control" id="pa" placeholder="" name = "pa">
+                                        </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="alergia">Alergias:</label>
-                                        <input type="text" class="form-control" id="alergia" placeholder="" name = "alergia">
-                                    </div>  
-
-                                    <div class="form-group">
-                                        <label for="medicamentos">Medicamentos:</label>
-                                        <input type="text" class="form-control" id="medicamentos" placeholder="" name = "medicamentos">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="cirurgia">Cirurgias:</label>
-                                        <input type="text" class="form-control" id="cirurgia" placeholder="" name = "cirurgia">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="internacoes">Internacões:</label>
-                                        <input type="text" class="form-control" id="internacoes" placeholder="" name = "internacoes">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="pa">P.A:</label>
-                                        <input type="text" class="form-control" id="pa" placeholder="" name = "pa">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="queixaprinc">Queixas Principais:</label>
-                                        <input type="text" class="form-control" id="queixaprinc" placeholder="" name = "queixaprinc">
-                                    </div>                      
-
-
+                                        <label for="queixas">Queixas Principais:</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name = "queixaprinc"></textarea>
+                                    </div>                    
                                     <input type="submit" class="btn btn-primary float-right" value = "Cadastrar">
                                 </form>
                             </div>
@@ -172,7 +176,7 @@
                     if(isset($_GET["nome"])){
                         $nome = $_GET["nome"];
                         include_once 'conexao.php';
-                        $sql = "SELECT * FROM pessoa WHERE nome
+                        $sql = "SELECT * FROM paciente WHERE nome
                         LIKE '{$nome}%'";
                       
 
@@ -198,13 +202,11 @@
                 <table class="table border table-striped">
                     <thead id = "theadCadastro" class = "thead-dark">
                         <tr>
-                            <th scope="col">CPF</th>
-                            <th scope="col">RG</th>						
                             <th scope="col">Nome</th>
-                            <th scope="col">Telefone</th>
-                            <th scope="col">Celular</th>	
-                            <!--<th scope="col">Ficha</th>	
-                            <th scope="col">Data de Nasci.</th> -->
+                            <th scope="col">Data de Nascimento</th>
+                            <th scope="col">Celular</th>
+                            <th scope="col">E-mail</th>
+                            
                             <th scope="col"></th>
                         </tr>
                     </thead>
@@ -212,37 +214,29 @@
                     <tbody id = "tbodyCadastro">
                         <?php
                             while($array = mysqli_fetch_array($buscar)){
-                                $idPessoa = $array['id_pessoa'];
-                                //$situacaoficha = $array['situacaoficha'];
-                                //$nascimento = $array['nascimento'];
-                                //$dtNasci = explode('-', $nascimento);
-                                //$datadeNascimento = $dtNasci[2] . "-" . $dtNasci[1]. "-" . $dtNasci[0];
-                            ?>
-                            <tr>
-                                <td><?php echo $array['cpf']?></td>
-                                <td><?php echo $array['rg']?></td>
-                                <td><?php echo $array['nome']?></td>
-                                <!--<td><?php echo $orcamento?></td>-->
-                                <td><?php echo $array['telefone']?></td>
-                                <td><?php echo $array['celular']?></td>
-                                <!--<td><?php echo $situacaoficha?></td>
-                                <td><?php echo $datadeNascimento?></td> -->
-                                <td class = "d-flex justify-content-around">
+                                $id = $array['id'];
 
-                                    <a style = "font-size:15px" class="btn btn-success btn-sm" href="consulta.php" role="button">
-                                        <i class="fa fa-medkit mr-2" aria-hidden="true"></i>
-                                        Consultas
-                                    </a>
+
+                                //$situacaoficha = $array['situacaoficha'];
+                                $nascimento = $array['nascimento'];
+                                $dtNasci = explode('-', $nascimento);
+                                $datadeNascimento = $dtNasci[2] . "-" . $dtNasci[1]. "-" . $dtNasci[0];
+                            ?>
+                            <tr><td><?php echo $array['nome']?></td>
+                                <td><?php echo $datadeNascimento?></td>
+                                <td><?php echo $array['celular']?></td>                                
+                                <td><?php echo $array['email']?></td>
+                                <td class = "d-flex justify-content-around">
 
                                     <a style = "font-size:15px" class="btn btn-primary btn-sm"  style="color:#fff" href="#" role="button">
                                         <i class="fa fa-address-book-o mr-2" aria-hidden="true"></i>
                                         Visualizar Ficha
                                     </a>
-                                    <a style = "font-size:15px" class="btn btn-warning btn-sm text-white"  style="color:#fff" href="editarCadastro.php?id=<?php echo $idPessoa?>" role="button">
+                                    <a style = "font-size:15px" class="btn btn-warning btn-sm text-white"  style="color:#fff" href="editarCadastro.php?id=<?php echo $id?>" role="button">
                                         <i class="fa fa-pencil-square-o mr-2" aria-hidden="true"></i>
                                         Editar
                                     </a> 
-                                    <a style = "font-size:15px" class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick = "excluir(<?php echo $array['id_pessoa']?>)" role="button">
+                                    <a style = "font-size:15px" class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick = "excluir(<?php echo $array['id']?>)" role="button">
                                         <i class="fa fa-trash-o mr-2" aria-hidden="true"></i>
                                         Excluir
                                     </a>

@@ -3,15 +3,10 @@
 	include_once 'conexao.php';
 
 	//
-	$nome = $_POST['nome'];
-	$data = $_POST['data'];
-    $descricao = $_POST['descricao'];
-    $dentista = $_POST['dentista'];
-	
-	
+	$atendimentonome = $_POST['atendimentonome'];	
 
 
-    $sql = "INSERT INTO atendimento VALUES(null,'{$nome}','{$data}', null, '{$descricao}','{$dentista}')"; 
+    $sql = "INSERT INTO atendimento_tipo VALUES(null,'{$atendimentonome}')"; 
 
 	// $inserir = mysqli_query($con, $sql);
 
